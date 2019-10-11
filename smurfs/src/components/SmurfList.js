@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { getSmurfs } from '../actions'
 
-// import Smurf from './Smurf'
+import Smurf from './Smurf'
 
 function SmurfList(props) {
     // API GET on mount
@@ -18,7 +18,7 @@ function SmurfList(props) {
 
     return (
         <div>
-            {/* {smurfs.map(smurf => <Smurf key={smurf.id} smurf={smurf} />)} */}
+            {smurfs.map(smurf => <Smurf key={smurf.id} smurf={smurf} />)}
         </div>
     )
 }
