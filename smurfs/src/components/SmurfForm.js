@@ -61,7 +61,7 @@ function SmurfForm(props) {
                 value={height}
                 onChange={changeHandler}
             />
-            <Button className='btn-info' type='submit'>Submit</Button>
+            <Button className='btn-success mt-3' type='submit'>Add Smurf</Button>
         </Form>
     )
 }
