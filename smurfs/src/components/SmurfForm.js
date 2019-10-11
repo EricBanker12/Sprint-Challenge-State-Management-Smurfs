@@ -35,6 +35,8 @@ function SmurfForm(props) {
                 type='text'
                 name='name'
                 placeholder='Name'
+                title='Name'
+                required
                 value={name}
                 onChange={changeHandler}
             />
@@ -42,6 +44,9 @@ function SmurfForm(props) {
                 type='text'
                 name='age'
                 placeholder='Age'
+                title='Age: must be a number'
+                required
+                pattern="\d+"
                 value={age}
                 onChange={changeHandler}
             />
@@ -49,6 +54,8 @@ function SmurfForm(props) {
                 type='text'
                 name='height'
                 placeholder='Height'
+                title='Height'
+                required
                 value={height}
                 onChange={changeHandler}
             />
