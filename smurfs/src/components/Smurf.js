@@ -1,9 +1,14 @@
 import React from 'react'
 import { Card, Button } from 'reactstrap'
+import { useDispatch } from 'react-redux'
 
 import EditModal from './EditModal'
 
+import { delSmurf } from '../actions'
+
 function Smurf(props) {
+    const dispatch = useDispatch()
+
     const { name, age, height } = props.smurf
 
     const [edit, setEdit] = React.useState()
@@ -17,7 +22,7 @@ function Smurf(props) {
                 <p>Height: {height}</p>
             </div>
             <Button className='btn-info ml-auto' onClick={()=>{setEdit(props.smurf)}} >Edit</Button>
-            <Button className='btn-danger ml-3' >Delete</Button>
+            <Button className='btn-danger ml-3' onClick={()=>{dispatch(delSmurf(props.smurf))}}>Delete</Button>
         </Card>
     )
 }
