@@ -9,11 +9,13 @@ import reducer from './reducers'
 
 // import App from "./components/App";
 import SmurfList from './components/SmurfList'
+import SmurfForm from "./components/SmurfForm";
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
+        <SmurfForm />
         <SmurfList />
     </Provider>
     , document.getElementById("root"));
