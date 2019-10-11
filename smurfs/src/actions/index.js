@@ -16,3 +16,18 @@ export const getSmurfs = () => dispatch => {
             dispatch({type: SET_ERROR, payload: err.message})
         })
 }
+
+export const ADD_SMURF = 'ADD_SMURF'
+
+export const addSmurf = smurf => dispatch => {
+    dispatch({type: GET_SMURFS})
+    axios.post('http://localhost:3333/smurfs', smurf)
+        .then(resp => {
+            console.log(resp)
+            dispatch({type: ADD_SMURF, payload: smurf})
+        })
+        .catch(err => {
+            console.error(err)
+            dispatch({type: SET_ERROR, payload: err.message})
+        })
+}
