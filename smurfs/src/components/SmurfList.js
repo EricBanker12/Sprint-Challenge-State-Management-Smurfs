@@ -7,10 +7,11 @@ import { getSmurfs } from '../actions'
 
 function SmurfList(props) {
     // API GET on mount
+    const dispatch = useDispatch()
+
     React.useEffect(()=>{
-        const dispatch = useDispatch()
         dispatch(getSmurfs())
-    },[])
+    },[dispatch])
 
     // get smurfs
     const { smurfs } = useSelector(({smurfs})=>({smurfs}))
