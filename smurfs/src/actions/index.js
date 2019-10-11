@@ -31,3 +31,16 @@ export const addSmurf = smurf => dispatch => {
             dispatch({type: SET_ERROR, payload: err.message})
         })
 }
+
+export const editSmurf = smurf => dispatch => {
+    dispatch({type: GET_SMURFS})
+    axios.put(`http://localhost:3333/smurfs/${smurf.id}`, smurf)
+        .then(resp => {
+            console.log(resp)
+            dispatch({type: SET_SMURFS, payload: resp.data})
+        })
+        .catch(err => {
+            console.error(err)
+            dispatch({type: SET_ERROR, payload: err.message})
+        })
+}
