@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { Form, Input, Button } from 'reactstrap'
 
 import { addSmurf } from '../actions'
 
@@ -30,8 +31,9 @@ function SmurfForm(props) {
     }
 
     return (
-        <form onSubmit={submitHandler}>
-            <input
+        <Form className='col-sm-6 mx-auto' onSubmit={submitHandler}>
+            <h2>Add a Smurf</h2>
+            <Input
                 type='text'
                 name='name'
                 placeholder='Name'
@@ -40,7 +42,7 @@ function SmurfForm(props) {
                 value={name}
                 onChange={changeHandler}
             />
-            <input
+            <Input
                 type='text'
                 name='age'
                 placeholder='Age'
@@ -50,7 +52,7 @@ function SmurfForm(props) {
                 value={age}
                 onChange={changeHandler}
             />
-            <input
+            <Input
                 type='text'
                 name='height'
                 placeholder='Height'
@@ -59,8 +61,8 @@ function SmurfForm(props) {
                 value={height}
                 onChange={changeHandler}
             />
-            <button type='submit'>Submit</button>
-        </form>
+            <Button className='btn-info' type='submit'>Submit</Button>
+        </Form>
     )
 }
 
